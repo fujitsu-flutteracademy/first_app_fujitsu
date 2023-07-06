@@ -1,3 +1,4 @@
+import 'package:first_app_fujitsu/modules/api/services/reqres_services.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,7 +17,9 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        ServicesReqResApi().getReqResService();
+      }),
     );
   }
 }
