@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Text(
-          personModel?.first_name ?? 'Este valor es nulo',
+          personModel?.last_name ?? 'Este valor es nulo',
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         personModel = await ServicesReqResApi().getReqResService();
         setState(() {});
 
-        print(personModel!.id);
+        print(personModel!.last_name);
       }),
     );
   }
