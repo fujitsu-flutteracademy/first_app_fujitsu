@@ -18,29 +18,17 @@ class ServicesReqResApi {
     //Una persona
     var url = Uri.parse("https://reqres.in/api/users/2");
 
-    print(url);
-    print(myUri);
-
     await http.get(url).then((response) {
-      print(response.statusCode);
-      print(response.body);
-
-      print(jsonDecode(response.body));
-
       Map<String, dynamic> resultPerson = jsonDecode(response.body);
 
       personModel = PersonModel.fromJson(resultPerson["data"]);
-      print(personModel);
-      print(personModel.id);
     }).catchError((err) {
       print(err);
     });
 
-    print("Hola desde mi API");
+    // await http.put(url).then((value) => print);
 
-    print(personModel);
-
-    print(personModel.id);
+    // await http.post(url).then((value) => print);
 
     return personModel;
   }
